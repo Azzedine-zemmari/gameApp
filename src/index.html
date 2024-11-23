@@ -7,7 +7,7 @@
     <link href="./output.css" rel="stylesheet">
 </head>
 <body class="bg-GreenPrimary">
-        <div class="flex flex-col justify-start gap-6 px-8 pt-8 pb-12">
+    <div class="flex flex-col justify-start gap-6 px-8 pt-8 pb-12">
         <header class="bg-white p-4 rounded-3xl md:rounded-full">
             <nav class="flex justify-between">
                 <img src="./image/logo.svg" alt="">
@@ -28,7 +28,7 @@
                     <button class=" bg-GreenPrimary text-white py-2 px-3  rounded-full w-1/2 ">Plan my trip</button>
             </nav>
         </header>
-        <main>
+        <main class="flex flex-col gap-6">
             <div id="discover" class="flex flex-col-reverse items-center justify-center rounded-3xl mt-3 bg-gradient-to-t from-secondery to-[#2F4B4D] md:grid md:grid-cols-2 md:grid-rows-1 md:gap-4 md:place-items-center md:py-5">
                 <div class="md:col-start-1">
                     <h1 class="font-secondery text-5xl pl-6 mt-5 text-white md:max-w-[420px] md:pl-0" style="line-height: 61px;">Discover the hidden Gems of Morocco</h1>
@@ -38,7 +38,40 @@
                     <img class="w-52" src="./image/star2.png" alt=""> 
                 </div>
             </div>
-        </main>
+            <div id="places" class="flex flex-col bg-white rounded-3xl min-w-full">
+                <div id="tags" class="flex items-center justify-start gap-4 overflow-x-auto mt-5">
+                    <div id="all" class="inline-flex items-center bg-GreenPrimary border rounded-full border-white text-white px-4 py-2 gap-2 flex-shrink-0">
+                        <img class="w-7" src="./image/miniLogo.avif" alt="">
+                        <p class="truncate">All Cities</p>
+                    </div>
+                    <div id="Marrackech" class="inline-flex items-center bg-white border rounded-full border-GreenPrimary text-GreenPrimary px-4 py-2 gap-2 flex-shrink-0">
+                        <img class="w-7 h-7 rounded-full" src="./image/kechMiniLogo.avif" alt="">
+                        <p class="">Marrackech</p>
+                    </div>
+                    <div id="Casablanca" class="inline-flex items-center bg-white border rounded-full border-GreenPrimary text-GreenPrimary px-4 py-2 gap-2 flex-shrink-0">
+                        <img class="w-7 h-7 rounded-full" src="./image/casablancaMiniLog.avif" alt="">
+                        <p class="">Casablanca</p>
+                    </div>
+                    <div id="Rabat" class="inline-flex items-center bg-white border rounded-full border-GreenPrimary text-GreenPrimary px-4 py-2 gap-2 flex-shrink-0">
+                        <img class="w-7 h-7 rounded-full" src="./image/rabatminilogo.avif" alt="">
+                        <p class="">Rabat</p>
+                    </div>
+                    <div id="Essouira" class="inline-flex items-center bg-white border rounded-full border-GreenPrimary text-GreenPrimary px-4 py-2 gap-2 flex-shrink-0">
+                        <img class="w-7 h-7 rounded-full" src="./image/essouiraMiniLog.avif" alt="">
+                        <p class="">Essouira</p>
+                    </div>
+                    <div id="Agadir" class="inline-flex items-center bg-white border rounded-full border-GreenPrimary text-GreenPrimary px-4 py-2 gap-2 flex-shrink-0">
+                        <img class="w-7 h-7 rounded-full" src="./image/agadirMiniLogo.avif" alt="">
+                        <p class="">Agadir</p>
+                    </div>
+                    <div id="Tanger" class="inline-flex items-center bg-white border rounded-full border-GreenPrimary text-GreenPrimary px-4 py-2 gap-2 flex-shrink-0">
+                        <img class="w-7 h-7 rounded-full" src="./image/tangerMiniLogo.avif" alt="">
+                        <p class="">Tanger</p>
+                    </div>
+                </div>
+            </div>
+            
+</main>
     </div>
 </body>
 </html>
@@ -51,13 +84,14 @@
     menu.addEventListener("click",()=>{
         PhoneMenu.classList.toggle("hidden")
         PhoneMenu.classList.add("flex")
+        tl.reversed(!tl.reversed());
     })
     var tl = gsap.timeline({ paused: true });
 
 tl.from(PhoneMenu, {
 	duration: 1,
 	opacity: 0,
-	height: '22vh', // change this to 100vh for full-height menu
+	height: '22vh', 
 	ease: 'expo.inOut',
 })
 tl.to(links, {
@@ -68,8 +102,4 @@ tl.to(links, {
 }, "-=0.5");
 
 tl.reverse();
-
-menu.addEventListener('click', () => {
-	tl.reversed(!tl.reversed());
-});
 </script>
