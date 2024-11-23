@@ -3,6 +3,9 @@
     "tailwindcss": "^3.4.15"
   },
   "scripts": {
-    "game":"npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+    "game": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5"
   }
 }

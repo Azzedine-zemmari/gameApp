@@ -6,7 +6,60 @@
     <title>gameX</title>
     <link href="./output.css" rel="stylesheet">
 </head>
-<body>
-    
+<body class="bg-GreenPrimary">
+    <div class="flex flex-col justify-start px-8 pt-8 pb-12">
+        <header class="bg-white p-4 rounded-lg md:rounded-full">
+            <nav class="flex justify-between">
+                <img src="./image/logo.svg" alt="">
+                <div class="hidden md:flex gap-5 items-center">
+                    <p class="font-primary">Home</p>
+                    <p class="font-primary">Discover</p>
+                    <p class="font-primary">About</p>
+                    <p class="font-primary">Contact</p>
+                    <button class=" bg-GreenPrimary text-white py-2 px-3  rounded-full ">Plan my trip</button>
+                </div>
+                <img id="burgerM" class="flex w md:hidden" src="./image/burger-menu-svgrepo-com.svg" alt="">
+            </nav>
+            <nav id="phoneNav" class="hidden flex-col items-center gap-4 my-3 md:hidden">
+                <p class="font-primary">Home</p>
+                    <p class="font-primary">Discover</p>
+                    <p class="font-primary">About</p>
+                    <p class="font-primary">Contact</p>
+                    <button class=" bg-GreenPrimary text-white py-2 px-3  rounded-full w-1/2 ">Plan my trip</button>
+            </nav>
+        </header>
+        <main></main>
+    </div>
 </body>
 </html>
+<script type="module">
+    import { gsap } from "../node_modules/gsap/all.js";
+    const menu = document.getElementById("burgerM")
+    const PhoneMenu = document.getElementById("phoneNav")
+    const links = document.querySelectorAll("#phoneNav p")
+    const header = document.getElementById("")
+    menu.addEventListener("click",()=>{
+        PhoneMenu.classList.toggle("hidden")
+        PhoneMenu.classList.add("flex")
+    })
+    var tl = gsap.timeline({ paused: true });
+
+tl.from(PhoneMenu, {
+	duration: 1,
+	opacity: 0,
+	height: '22vh', // change this to 100vh for full-height menu
+	ease: 'expo.inOut',
+})
+tl.to(links, {
+	duration: 1,
+	opacity: 1,
+	stagger: 0.7,
+	ease: 'expo.inOut',
+}, "-=0.5");
+
+tl.reverse();
+
+menu.addEventListener('click', () => {
+	tl.reversed(!tl.reversed());
+});
+</script>
