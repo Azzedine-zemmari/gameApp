@@ -9,7 +9,7 @@
 </head>
 
 <body class="bg-GreenPrimary">
-    <div class="flex flex-col justify-start gap-6 px-8 pt-8 pb-12 w-[80%] mx-auto">
+    <div class="flex flex-col justify-start gap-6 pt-8 pb-12 w-[80%] mx-auto">
         <header class="bg-white p-4 rounded-3xl md:rounded-full">
             <nav class="flex justify-between">
                 <img src="./image/logo.svg" alt="">
@@ -43,7 +43,7 @@
                     <img class="w-52" src="./image/star2.png" alt="">
                 </div>
             </div>
-            <div id="places" class="flex flex-col bg-white rounded-3xl min-w-full px-10">
+            <div id="places" class="flex flex-col bg-white rounded-3xl min-w-full px-5 md:px-10 pb-10">
                 <div id="tags" class="flex items-center justify-start gap-4 overflow-x-auto mt-10">
                     <div id="all"
                         class="inline-flex items-center bg-GreenPrimary border rounded-full border-white text-white px-4 py-2 gap-2 flex-shrink-0">
@@ -131,8 +131,8 @@
             <div style="background-color:${bgColor}" class="rounded-3xl px-[18px] pt-[18px] pb-[30px]">
                 <img src="${element.tumbnail}"class="w-80 rounded-3xl mx-auto"/>
                 <p class="font-primary text-xs text-white ml-2 mt-2">${element.city}</p>
-                <h2 class="font-secondery text-4xl pb-4 text-white ml-2">${element.name}</h2>
-                <div class="flex ml-2">
+                <a href="./details.html?id=${element.id}" class="font-secondery text-4xl pb-4 text-white ml-2">${element.name}</a>
+                <div class="flex ml-1 mt-2">
                     ${tagsHTML}
                 </div>
             </div>
